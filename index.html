@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
+        <main class="main">
+            <div class="container">
+                <form novalidate name="addUserForm">
+                    <div class="wrap">
+                        <div class="form-input">
+                            <h3 class="form-label">First Name</h3>
+                            <input type="text" class="input" name="login" value="Petro" placeholder="John">
+                            <h6 class="message d-none">Provide a valid name</h6>
+                        </div>
+                        <div class="form-input">
+                            <h3 class="form-label">Email</h3>
+                            <input type="email" class="input" name="email" value="i.w.gadzhega@gmail.com" placeholder="name@example.com">
+                            <h6 class="message d-none">Provide a valid email</h6>
+                        </div>
+                        <div class="form-input">
+                            <h3 class="form-label">Password</h3>
+                            <input type="password" class="input" name="password" value="1234567qwer" placeholder="Enter a password">
+                            <h6 class="message d-none">Provide a better password 8 characters long at minimum</h6>
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <input type="button" name="addUser" value="Add User">
+                    </div>
+                </form>
+                <table class="users">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Login</th>
+                            <th>Password</th>
+                            <th>Email</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </main>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

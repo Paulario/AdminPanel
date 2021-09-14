@@ -1,0 +1,152 @@
+@import 'reset';
+@import 'fonts';
+@import 'mixins';
+
+.main { 
+    font-family: Roboto;
+    padding: 2rem 1rem;
+    width: 100%;
+    .container {
+        @include flex(row, space-around, flex-start);
+        width: 1180px;
+        margin: 0 auto;
+        padding: 1em;
+        // border: 2px dashed red;
+
+        @media screen and (max-width: 1200px) {
+            width: 950px;
+        }
+        @media screen and (max-width: 970px) {
+            width: 768px;
+            @include flex(column, flex-start, center);
+        }
+
+        form[name="addUserForm"] {
+            width: 30%;
+            @media screen and (max-width: 970px) {
+                width: 100%;
+                @include flex(column, flex-start, center);
+            }
+            .wrap {
+                @media screen and (max-width: 970px) {
+                    @include flex(row, space-between, baseline);
+                    flex-wrap: nowrap;
+                }
+            }
+            .form-input {
+                margin: 0 0 1rem 0;
+                h3  {
+                    font-size: 22px;
+                    margin: 0 0 0.55rem 0;
+                    color: rgba(0,0,0,0.8);
+                }
+                input:is(
+                    [type="text"], 
+                    [type="email"], 
+                [type="password"]) {
+                    outline: 0;
+                    border: 1px solid skyblue;
+                    border-radius: 10px;
+                    padding: 0.75em 1.25em;
+                    width: 100%;
+                    &:focus  {
+                        border: 3px solid skyblue;
+                    }
+                }
+                .message {
+                    margin-block: 0.5em;
+                    font-size: 14px;
+                    color: red;
+                }
+                &:last-child  {
+                    @media screen and (max-width: 970px) {
+                        align-self: flex-end;
+                        width: initial;
+                    }
+                }
+                @media screen and (max-width: 970px) {
+                    max-width: 30%;
+                }
+            }
+        }
+
+        table.users {
+            @media screen and (max-width: 970px) {
+                width: 100%;
+            }
+            width: 60%;
+            height: 100%;
+            text-align: center;
+            thead  {
+                border-block: 1px solid darkgray;
+                font-weight: bold;
+                th  { padding: 10px; }
+            }
+            tbody  {
+                tr {
+                    td { 
+                        padding: 10px; 
+                        &:nth-child(5), &:last-child {
+                            width: 110px;
+                        }
+                    }
+                    input[type="button"]  {
+                        &[name="delete"] { 
+                            background-color: tomato; 
+                            border-color: tomato;
+                            &:focus  {
+                                border: 2px inset tomato; 
+                            }
+                        }
+                        &[name="edit"] {
+                            background-color: gold; 
+                            border-color: gold;
+                            &:focus  {
+                                border: 2px inset gold; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+input {
+    font-family: Roboto;
+    &[type="button"] {
+        border: 0;
+        outline: 0;
+        padding: 5px 10px;
+        border-width: 2px;
+        border-style: outset;
+        border-radius: 10px;
+        color: black;
+        // text-shadow: 1px 1px white;
+        &[name="addUser"] {
+            background-color: #36ff36; 
+            border-color: #36ff36;
+            &:focus  {
+                border: 2px inset #36ff36; 
+            }
+        }
+        &[name="saveChanges"] {
+            background-color: #10ccba; 
+            border-color: #10ccba;
+            &:focus  {
+                border: 2px inset #10ccba; 
+            }
+        }
+    }
+}
+
+.is-invalid {
+    border-color: red !important;
+}
+
+.is-valid {
+    border-color: green !important;
+}
+.d-none {
+    display: none;
+}
