@@ -13,7 +13,6 @@ userTable.addEventListener('click', function(event){
     }
     if(event.target.matches('input[name="edit"]')){
         let index = event.target.closest('tr').dataset.index;
-        console.log(USERS[index]);
         editUser(USERS[index]);
         addUserForm.addUser.value = "Save Changes";
         addUserForm.addUser.name = "saveChanges";
@@ -119,19 +118,19 @@ function editUser(user){
     
 }
 
-function isValidName(name){
+function isValidName(name) {
     name = name.trim();
     let regExp = /^[A-Za-z]{3,18}$/;
     return regExp.test(name);
 }
 
-function isValidEmail(email){
+function isValidEmail(email) {
     email = email.trim();
     let regExp = /^(\w+((\.|-)\w+)?\.?)+@(gmail|ukr)\.(ua|com|org|net)$/;
     return regExp.test(email);
 }
 
-function isValidPassword(password){
+function isValidPassword(password) {
     let regExp = /^(\w|\s){8,255}$/;
     return regExp.test(password);
 }
